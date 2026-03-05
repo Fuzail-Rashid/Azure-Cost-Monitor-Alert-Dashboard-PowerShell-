@@ -1,0 +1,27 @@
+{
+  "_comment": "Copy this file, rename to settings.json, and fill in your values.",
+  "_env_note": "Values like '${MY_VAR}' are resolved from environment variables at runtime — never hardcode secrets.",
+
+  "alert_thresholds": {
+    "subscription_monthly_usd": 500,
+    "per_service_usd": {
+      "Virtual Machines":             200,
+      "Azure Kubernetes Service":     150,
+      "Storage":                       50,
+      "SQL Database":                  80,
+      "App Service":                   40
+    }
+  },
+
+  "email": {
+    "enabled": false,
+    "sender": "azure-alerts@yourdomain.com",
+    "recipients": ["devops@yourdomain.com", "manager@yourdomain.com"],
+    "smtp_host": "smtp.office365.com",
+    "smtp_port": 587,
+    "smtp_user": "${SMTP_USER}",
+    "smtp_password": "${SMTP_PASSWORD}"
+  },
+
+  "teams_webhook_url": "${TEAMS_WEBHOOK_URL}"
+}
